@@ -1,0 +1,101 @@
+.p-container {
+    margin: 40px;
+
+}
+
+.underline02 {
+    background: linear-gradient(transparent 40%, #a1e0ff 60%);
+  }
+
+.fontt{
+    font-size: 20px;
+}
+
+.font1 {
+    
+    color: #9f9f9f;     /* 文字色指定 */
+}
+
+
+.profile { 
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0
+    
+}
+
+.joho {
+    margin: 10px 10px
+}
+
+.shasin{
+    margin: 0 70px
+}
+
+.co {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.yourpost {
+    
+    margin: 20px 0
+}
+
+.hoka{
+    color: #9f9f9f;
+}
+
+a.btn_30 {
+	display: flex;
+	vertical-align: middle;
+	text-decoration: none;
+	margin: auto;
+	width: 20em;
+	height: 4em;
+	color: #ccc;
+	cursor: pointer;
+	transition: all 0.85s cubic-bezier(.17,.67,.14,.93);
+	transform-style: preserve-3d;
+	transform-origin: 100% 50%;
+}
+a.btn_30:hover {
+	transform: rotateX(-90deg);
+}
+a.btn_30 .side {
+	box-sizing: border-box;
+	position: absolute;
+	display: inline-block;
+	width: 20em;
+	text-align: center;
+	padding: 1.2rem 4rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+a.btn_30 .top {
+	background: #b4e12b;
+	color: #fff;
+	transform: rotateX(90deg) translate3d(0, 0, 2em);
+}
+a.btn_30 .front {
+	background: #27acd9;
+	color: #fff;
+	transform: translate3d(0, 0, 2em);
+}
+
+h2 {
+    position: relative;
+    padding: 0.2em 0;
+  }
+  h2:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 30%;
+    background: -webkit-linear-gradient(to right, rgb(162, 221, 255), transparent);
+    background: linear-gradient(to right, rgb(162, 221, 255), transparent);
+  }

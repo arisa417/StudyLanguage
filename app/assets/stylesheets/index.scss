@@ -1,0 +1,75 @@
+
+
+.ask-container {
+    width: 100%;
+    margin: 20px 40px ;
+}
+a.btn_22 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: 20px 40px;
+	padding: 0.7,rem 2rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.5s;
+	animation: move_d 2s infinite;
+	box-shadow: 0 5px 0 rgba(6, 134, 178, 1);
+	position: relative;
+}
+@keyframes move_d {
+    0% {box-shadow: 0 5px 0 rgba(6, 134, 178, 1); top: 0px;}
+    10% {box-shadow: 0 0 0 rgba(6, 134, 178, 1); top: 5px;}
+    20% {box-shadow: 0 5px 0 rgba(6, 134, 178, 1); top: 0px;}
+    30% {box-shadow: 0 0 0 rgba(6, 134, 178, 1); top: 5px;}
+    40% {box-shadow: 0 5px 0 rgba(6, 134, 178, 1); top: 0px;}
+}
+a.btn_22:hover {
+	color: #27acd9;
+	background: #fff;
+	border: 2px solid #0686b2;
+}
+
+.search-container {
+    margin: 20px
+
+}
+
+.new-container {
+    margin: 20px
+}
+
+.ue-container {
+    width: 100;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+
+
+.tweet {
+    border-top: solid #a3a3a3;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.main-box-container {
+    
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.like-container {
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: justify;
+}

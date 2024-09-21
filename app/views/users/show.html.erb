@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag 'showp', :media => "all" %>
+<div class="p-container">
+<h1><span class="underline02"><%= @user.name %></span><span class="fontt">の</span> Profile</h1>
+<div class="profile">
+    
+     
+<div class="joho">
+<h3></h3>
+<p><span class="font1">誕生日 Birth:</span> <%=@user.birth%></p>
+<p><span class="font1">性別 Gender:</span> <%=@user.gender%></p>
+<p><span class="font1">学びたい言語:</span> <%=@user.manabitaii%></p>
+<p><span class="font1">教えられる言語:</span> <%=@user.osierareru%></p>
+<br>
+<span class="font1">ひとこと:</span>
+<div class="co">
+<p> <%= @user.profile %></p></div>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する Edit", edit_user_registration_path %>
+<% end %>
+
+</div>
+
+<div class="shasin">
+<p><%= image_tag @user.image_url, size: "100x100" if @user.image? %></p>
+</div>
+
+</div>
+
+<div class="user">
+    <h3><%= @user.name %></h3>
+
+    <% if @user.id == current_user.id %>
+        <span class="hoka"><%= @msg %></span>
+    <% else %>
+        <% if @room.present? %>
+        <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+            <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <%= f.submit "DMを開始する" %>
+        <% end %>
+        <% else %>
+        <p>ルームが見つかりませんでした。</p>
+        <% end %>
+    <% end %>
+</div>
+
+
+
+
+<div class="yourpost">
+<h2>投稿一覧 Your post</h2>
+<% @user.tweets.each do |t| %>
+<%= image_tag @user.image_url, size: "40x40" if @user.image? %>
+  <%= t.user.name %>
+  <%= t.honbun %>
+  <br>
+<% end %><br>
+
+<%= link_to "Askに戻る Back to Ask ", tweets_path %>
+</div></div>

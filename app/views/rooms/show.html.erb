@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag 'rshow', :media => "all" %>
+<div class="dmroom">
+<h1>DM</h1>
+
+
+<% @entries.each do |e| %>   
+<% end %>
+<p>トーク画面 Chat</p>
+</div>
+
+<div class="chatran">
+    <% @messages.each do |m| %>
+         <% if m.user == current_user %>
+    <tr class="row justify-content-center">
+      <!-- アイコンを左側に表示する -->
+      <td class="col-2">
+        <%= image_tag m.user.image_url, size: "50x50" if m.user.image? %>
+      </td>
+      <!-- メッセージを右側に表示する -->
+      <td class="col-10">
+        <%= m.user.name %> <br>
+        <!-- 自分用の吹き出しCSSクラスを適用する -->
+        <div class="says">
+          <p><%= safe_join(m.body.split("\n"),tag(:br)) %></p>
+          <span><%= l m.created_at %></span>
+        </div>
+      </td>
+    </tr>
+
+  <!-- 自分以外のメッセージの場合 -->
+  <% else %>
+    <tr class="row justify-content-center">
+      <!-- メッセージを左側に表示する -->
+      <td class="col-10">
+        <div class="col-11 float-right">
+          <%= m.user.name %> <br>
+        </div>
+        <!-- 自分以外用の吹き出しCSSクラスを適用する -->
+        <div class="other-user-says">
+          <p><%= safe_join(m.body.split("\n"),tag(:br)) %></p>
+          <span><%= l m.created_at %></span>
+        </div>
+      </td>
+      <!-- アイコンを右側に表示する -->
+      <td class="col-2">
+        <%= image_tag m.user.image_url, size: "50x50" if m.user.image? %>
+      </td>
+    </tr>
+  <% end %>
+    <% end %>
+
+    <%= form_for @message do |f| %>
+    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい Enter your massage" , :size => 100 %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
+    <br>
+    <%= f.submit "送信する" %>
+    <% end %>
+
+
+<%= link_to "ユーザー一覧に戻る" "Back to Profile", users_path %>
+
+</div>

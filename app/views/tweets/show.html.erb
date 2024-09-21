@@ -1,0 +1,54 @@
+<%= stylesheet_link_tag 'tshow', :media => "all" %>
+
+<h1>Ask</h1>
+
+<div class="tweet">
+<span class="twn"><p><%= @tweet.user.name %></p></span>
+  <p><%= @tweet.honbun %></p>
+  
+   <% if user_signed_in? %>
+      <% if current_user.already_liked?(@tweet) %>
+        <%= link_to tweet_like_path(@tweet), method: :delete do %>
+          <i class="fa-solid fa-heart"></i><%= @tweet.likes.count %>
+        <% end %>
+      <% else %>
+        <%= link_to tweet_likes_path(@tweet), method: :post do %>
+          <i class="fa-regular fa-heart"></i><%= @tweet.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <i class="fa-regular fa-heart"></i><%= @tweet.likes.count %>
+    <% end %>
+
+
+<% if user_signed_in? && current_user.id == @tweet.user_id %>
+<%= link_to "編集する", edit_tweet_path(@tweet.id) %><i class="fa-regular fa-pen-to-square"></i>
+<% end %>
+<p><%= @tweet.created_at %></p>
+
+</div>
+
+ <div class="style2"></div>
+
+<div class="comment-wrapper">
+  
+  <% @comments.each do |c| %>
+    <div>
+      <span class="twn"><%= c.user.name unless c.user.blank? %></span>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+
+
+<%= link_to "Tweet一覧に戻る", tweets_path %></div>

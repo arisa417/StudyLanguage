@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+<html>
+  <head>
+    <title>Language</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/23aeabed45.js" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Honk&family=Patrick+Hand+SC&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+  <div class="st">
+  <h1><%= link_to 'Study Language', root_path %> <i class="fa-solid fa-language"></i></h1></div>
+  <div class="header-list">
+    <ul>
+    <li><%= link_to 'About', about_index_path %></li>
+    <li><%= link_to 'Ask', tweets_path %></li>
+    <li><% if user_signed_in? %>
+  <%= link_to "Profile", user_path(current_user.id) %>
+<% end %></li>
+    <li><%= link_to 'Search Users', users_path %></li>
+    
+     
+    
+    
+
+    <li><% if user_signed_in? %>
+    <%= button_to 'sign out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+     <%= link_to "Sign up", new_user_registration_path %></li>
+     <%= link_to "Log in", new_user_session_path %></li>
+    <% end %></li>
+    </ul>
+   
+  </div>
+  
+ </header>
+
+ <div class="first-v"></div>
+
+ <main>
+  <%= yield %>
+ </main>
+  </body>
+  <footer>
+     <p>Copyright © GeekSalon All Rights Reserved.</p>
+     </footer>
+</html>

@@ -1,0 +1,3 @@
+class GengoController < ApplicationController
+ 
+end

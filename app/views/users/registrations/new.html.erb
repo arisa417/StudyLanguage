@@ -1,0 +1,55 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+ <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :birth %><br />
+    <%= f.date_field :birth, autofocus: true, autocomplete: "birth" %>
+  </div>
+
+  <div class="mb-3">
+     <%= f.label :gender %><br />
+     <%= f.select :gender, User.genders.keys %>
+</div>
+
+
+<div class="field">
+  <%= f.label :学びたい言語 %><br />
+     <%= f.select :manabitaii, [["English", "English"], ["Chinese", "Chinese"]], include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :教えられる言語 %><br />
+     <%= f.select :osierareru, [["English", "English"], ["Chinese", "Chinese"]], include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

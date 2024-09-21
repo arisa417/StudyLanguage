@@ -1,0 +1,91 @@
+#second-block {
+
+    height: 300px;
+    background-color: rgb(198, 198, 198);
+    display: flex;
+    justify-content: space-between;
+}
+
+.mozi{
+    font-size: 2.3em;
+    background-color: #4d9bc1;
+  color: #fff;
+  padding: 0 0.1em;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
+    
+}
+.under {
+    border-bottom: solid 3px #ffffff;
+  }
+
+.oomoto{
+    margin:100px 150px
+   
+}
+
+.setsumei{
+    margin: 60px 40px
+    
+}
+
+
+.nani{
+
+    margin:70px
+}
+.se{
+    background-position: center;
+    background-image: url("AdobeStock_505842444.jpeg");
+    background-repeat:  no-repeat;                /* 画像の繰り返しを指定  */              
+    width:auto;                                   /* 横幅のサイズを指定    */
+    height:700px; 
+      
+
+}
+
+.third{ height: 500px;
+    background-color: rgb(198, 198, 198);
+
+}
+
+.tsu{
+    border-top: #4d9bc1;
+    padding:40px 70px;
+}
+.boxmatome{
+    
+    display: flex
+}
+
+.box {
+    margin       : auto;
+    width        : 300px;
+    height       : 250px;
+    background-color: #4d9bc1;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
+    
+  }
+
+  .aa{
+color: #fff;
+margin: 20px;
+
+  }
+
+  .box2 {
+    margin       : auto;
+    width        : 300px;
+    height       : 250px;
+    background-color: #4d9bc1;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+
+  .box3 {
+    margin       : auto;
+    width        : 300px;
+    height       : 250px;
+    background-color: #4d9bc1;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
+  }

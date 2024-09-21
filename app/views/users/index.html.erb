@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag 'uindex', :media => "all" %>
+
+<div class="mokuji">
+<h1>Search Users & DM</h1>
+<h2>ユーザーを探す Search Users <i class="fa-solid fa-magnifying-glass"></i></h2>
+</div>
+
+<div class="select-container">
+    <%= form_tag(users_path, method: "get") do %>
+    <div class="namae">
+        <%= label_tag :name, "名前 Name" %><%= text_field_tag :name, params[:name] %>
+        </div>
+    <div class="seibetsu">
+        <%= label_tag :name, "性別 Gender" %>
+        <%= select_tag :gender, options_for_select(User.genders), include_blank: true %>
+        </div>
+    <div class="gengoo">
+        <%= label_tag :name, "その人が学びたい言語 Languages that he/she wants to learn" %>
+        <%= select_tag :manabitaii, options_for_select(User::LANGUAGES), include_blank: true %>
+        </div>
+        <div class="gengo2">
+        <%= label_tag :name, "その人が教えられる言語 Available Language" %>
+        <%= select_tag :osierareru, options_for_select(User::LANGUAGES2), include_blank: true %>
+        <%= submit_tag "検索" %></div>
+       <% end %>
+
+
+
+<% if user_signed_in? %>
+
+   
+
+    <% number = 1%>
+    <div class="flex-container">
+        <% @users.each do |u| %>
+        <div class="user-in">
+            
+            <p>No.<%= number %></p>
+            <div class="n">
+            <h3><%= u.name %></h3>   </div>
+
+            <div class="g">
+            その人が学びたい言語 <%= u.manabitaii%></div>
+            その人が教えられる言語　<%= u.osierareru%>
+            <p><%= link_to 'ユーザーページへ To Profile', user_path(u.id) %></p>
+    
+</div>
+        </div>
+        
+        <% number += 1 %>
+        <% end %>
+    </div>
+
+<% else %>
+  <%= link_to "SignUp", new_user_registration_path %>
+  <br>
+  <%= link_to "SignIn", new_user_session_path %>
+<% end %>
+
+</div>

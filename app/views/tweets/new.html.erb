@@ -1,0 +1,15 @@
+<h1>Ask</h1>
+<br>
+<h4>質問してみよう!  Let's post your question!</h4>
+<%= form_for @tweet do |f| %>
+
+<div class="field">
+    
+    
+    <%= f.text_field :honbun,size: 90%>
+  </div>
+
+  <%= f.submit "投稿する Post" %>
+<% end %>
+
+<%= link_to "一覧に戻る Back", tweets_path %>

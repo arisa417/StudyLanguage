@@ -1,0 +1,61 @@
+
+.dmroom{
+    border-bottom: 1px solid #333;;
+    margin: 20px;
+    
+}
+
+.chatran{
+    margin: 20px
+}
+.says {
+    margin: 10px 50px;
+    float: left;
+    position: relative;
+    width: calc(100% - 100px);
+    padding: 16px;
+    background: #828282;
+    border-radius: 15px;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+  .says:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    left: -19px;
+    border: 8px solid transparent;
+    border-right: 18px solid #828282;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+  }
+
+  
+  
+
+  // 自分以外のメッセージの吹き出し
+.other-user-says {
+    margin: 10px 50px;
+    float: right;
+    position: relative;
+    width: calc(100% - 100px);
+    padding: 16px;
+    background: #828282;
+    border-radius: 15px;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+  .other-user-says:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    right: -19px;
+    border: 8px solid transparent;
+    border-right: 18px solid #828282;
+    -webkit-transform: rotate(145deg);
+    transform: rotate(145deg);
+  }
+
+  
